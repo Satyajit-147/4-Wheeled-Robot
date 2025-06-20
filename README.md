@@ -82,7 +82,7 @@ This command:
 ```bash
 cd ~/four_wheel_bot_ws
 source install/setup.bash
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/teleop_cmd
+ros2 run teleop_twist_keyboard teleop_twist_keyboard 
 ```
 
 Use your keyboard to drive the robot:
