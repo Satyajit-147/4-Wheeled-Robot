@@ -47,7 +47,7 @@ sudo apt install ros-humble-gazebo-ros-pkgs ros-humble-xacro ros-humble-teleop-t
 ## Building the Workspace and Sourcing 
 
 ```bash
-cd ~/four_wheel_bot_ws
+cd ~/four_wheel_ws
 colcon build
 source install/setup.bash
 ```
@@ -61,7 +61,7 @@ source install/setup.bash
 > Open a new terminal
 
 ```bash
-cd ~/four_wheel_bot_ws
+cd ~/four_wheel_ws
 source install/setup.bash
 ros2 launch four_wheel_bot view_robot.launch.py
 ```
@@ -80,7 +80,7 @@ This command:
 > Open a new terminal
 
 ```bash
-cd ~/four_wheel_bot_ws
+cd ~/four_wheel_ws
 source install/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard 
 ```
