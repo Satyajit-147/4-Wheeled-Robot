@@ -1,31 +1,28 @@
 # Four Wheel Bot Simulation in ROS 2 & Gazebo
 
-## 📌 Project Overview
+## Project Overview
 
-This project simulates a 4-wheeled differential drive robot using **ROS 2 (Humble)** and **Gazebo**. The robot is equipped with a **LIDAR** and a **camera** sensor. It can be controlled via keyboard using the **teleop_twist_keyboard** package. This setup is ideal for testing navigation, perception, and control algorithms in a simulated environment.
+This project simulates a 4-wheeled differential drive robot using **ROS 2 (Humble)** and **Gazebo**. The robot is equipped with a **LIDAR** and a **camera** sensor. It can be controlled via keyboard using the **teleop_twist_keyboard** package. 
 
 ---
 
-## 📁 Workspace & Package Structure
+## Workspace Structure
 
 ```
-four_wheel_bot_ws/
-├── src/
-│   └── four_wheel_bot/
-│       ├── launch/
-│       │   ├── gazebo.launch.py
-│       │   └── teleop.launch.py
-│       ├── models/
-│       │   └── four_wheel_bot/
-│       │       └── model.sdf
-│       ├── urdf/
-│       │   └── four_wheel_bot.xacro
-│       ├── worlds/
-│       │   └── custom.world
-│       ├── config/
-│       ├── CMakeLists.txt
-│       └── package.xml
-└── install/
+four_wheel_ws/
+└── src/
+    └── four_wheel_bot/
+        ├── launch/
+        │   └── view-robot.launch.py          
+        ├── obstacle_stop/
+        │   ├── __init__.py
+        │   └── obstacle_stop_node.py         
+        ├── urdf/
+        │   └── four_wheel_bot.xacro          
+        ├── worlds/
+        │   └── wall_world.world              
+        ├── package.xml
+        └── setup.py
 ```
 
 ---
