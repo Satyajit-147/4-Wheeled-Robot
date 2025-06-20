@@ -103,5 +103,28 @@ Make sure `cmd_vel` is being published and robot is responding in the simulation
 
 ---
 
+## Aditional Commands
 
+List all active topics:
 
+```bash
+ros2 topic list
+```
+
+Get info about specific topic (Eg: cmd_vel)
+
+```bash
+ros2 topic info /cmd_vel
+```
+
+Visualize the robot's coordinate frames:
+
+```bash
+ros2 run tf2_tools view_frames
+```
+
+Launch RQt tools for introspection:
+
+```bash
+ros2 run rqt_gui rqt_gui
+```
