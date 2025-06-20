@@ -103,11 +103,5 @@ Make sure `cmd_vel` is being published and robot is responding in the simulation
 
 ---
 
-## Troubleshooting
-
-- If robot floats or misaligns, check:
-  - Wheel joint origins
-  - Sensor mount offsets
-  - TF tree using `rqt_tf_tree` or `ros2 run tf2_tools view_frames`
 
 
