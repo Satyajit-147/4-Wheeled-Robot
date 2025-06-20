@@ -27,7 +27,7 @@ four_wheel_ws/
 
 ---
 
-## 📦 Required Packages
+## Required Packages
 
 Ensure the following packages are installed:
 - `ros-humble-desktop`
@@ -44,7 +44,7 @@ sudo apt install ros-humble-gazebo-ros-pkgs ros-humble-xacro ros-humble-teleop-t
 
 ---
 
-## 🚀 How to Build
+## Building the Workspace and Sourcing 
 
 ```bash
 cd ~/four_wheel_bot_ws
@@ -54,16 +54,16 @@ source install/setup.bash
 
 ---
 
-## 🧪 How to Simulate the Robot in Gazebo
+## How to Simulate the Robot in Gazebo
 
 ### Step 1: Launch the simulation
 
-> 📌 Open a new terminal
+> Open a new terminal
 
 ```bash
 cd ~/four_wheel_bot_ws
 source install/setup.bash
-ros2 launch four_wheel_bot gazebo.launch.py
+ros2 launch four_wheel_bot view_robot.launch.py
 ```
 
 This command:
@@ -73,11 +73,11 @@ This command:
 
 ---
 
-## 🎮 How to Control the Robot with Teleop
+## How to Control the Robot with Teleop
 
 ### Step 2: Launch teleop
 
-> 📌 Open a new terminal
+> Open a new terminal
 
 ```bash
 cd ~/four_wheel_bot_ws
@@ -93,7 +93,7 @@ Make sure `cmd_vel` is being published and robot is responding in the simulation
 
 ---
 
-## 📷 Sensor Topics
+## Sensor Topics
 
 - LIDAR: `/scan`
 - Camera image: `/image_raw`
@@ -103,23 +103,11 @@ Make sure `cmd_vel` is being published and robot is responding in the simulation
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 - If robot floats or misaligns, check:
   - Wheel joint origins
   - Sensor mount offsets
   - TF tree using `rqt_tf_tree` or `ros2 run tf2_tools view_frames`
 
----
 
-## 📌 Next Steps
-
-- Add SLAM or Navigation2 stack
-- Implement obstacle avoidance
-- Visualize in RViz
-
----
-
-## 📃 License
-
-MIT License © 2025
