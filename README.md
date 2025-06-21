@@ -128,3 +128,8 @@ Launch RQt tools for introspection:
 ```bash
 ros2 run rqt_gui rqt_gui
 ```
+
+## Video:
+
+Drive link: https://drive.google.com/drive/folders/1qL1UN45V-eHp_BYTSSY8w2Gg82WltdAW
+
