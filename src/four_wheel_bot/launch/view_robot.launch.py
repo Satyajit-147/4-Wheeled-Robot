@@ -9,9 +9,10 @@ def generate_launch_description():
     pkg_share = FindPackageShare("four_wheel_bot")
     xacro_file = PathJoinSubstitution([pkg_share, "urdf", "four_wheel_bot.xacro"])
     world_file = PathJoinSubstitution([pkg_share, "worlds", "wall_world.world"])
+    rviz_config_file = PathJoinSubstitution([pkg_share, "rviz", "robot_config.rviz"])
 
     return LaunchDescription([
-        # Start Gazebo with custom world
+        # Launch Gazebo with the specified world
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 PathJoinSubstitution([
@@ -21,7 +22,15 @@ def generate_launch_description():
             launch_arguments={"world": world_file}.items()
         ),
 
-        # Start robot_state_publisher with robot_description and sim time
+        # Publish joint states (so wheels show up in RViz)
+        Node(
+            package="joint_state_publisher_gui",
+            executable="joint_state_publisher_gui",
+            name="joint_state_publisher",
+            output="screen"
+        ),
+
+        # Publish robot description and TF
         Node(
             package="robot_state_publisher",
             executable="robot_state_publisher",
@@ -35,7 +44,7 @@ def generate_launch_description():
             }]
         ),
 
-        # Spawn robot in Gazebo
+        # Spawn the robot in Gazebo
         Node(
             package="gazebo_ros",
             executable="spawn_entity.py",
@@ -47,12 +56,20 @@ def generate_launch_description():
             output="screen"
         ),
 
-        # Custom obstacle stop node
+        # Node to stop robot based on LIDAR input
         Node(
             package="four_wheel_bot",
             executable="stopper",
             name="obstacle_stopper",
             output="screen"
+        ),
+
+        # RViz2 for visualization
+        Node(
+            package="rviz2",
+            executable="rviz2",
+            name="rviz2",
+            output="screen",
+            arguments=["-d", rviz_config_file]
         )
     ])
-
